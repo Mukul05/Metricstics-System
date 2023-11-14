@@ -24,7 +24,6 @@ class Metricstics:
         return self.iterative_sum(self.data) / self.iterative_len(self.data)
 
     def sort_data(self, lst):
-        # Implementing the iterative version of the sort using the built-in sorted function
         return sorted(lst)
 
     def median(self):
