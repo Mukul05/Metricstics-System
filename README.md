@@ -1,5 +1,6 @@
 # SOEN-6611-Metricstics-System
 
+Please read the instructions for steps to run the code.
 ## Contributors:
 
 Mukul Kumar	

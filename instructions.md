@@ -26,33 +26,40 @@ pip install tk
 The application consists of three main files:
 
 1) metricstics.py: Contains the Metricstics class with methods for statistical calculations.
-2) metricstics_exceptions.py: Contains custom exception classes for the application.
+2) exceptions.py: Contains custom exception classes for the application.
 3) metricstics_app.py: Manages the Tkinter GUI and user interactions.
+4) login.py: Handles the user authentication process.
+5)session_manager.py: Manages user sessions, including saving and loading sessions.
+
+## The application also includes a login functionality with predefined credentials 
+## (username: admin, password: password)
 
 There are also two example dataset files:
 1) valid_dataset.txt: A text file with valid numeric data.
 2) invalid_dataset.txt: A text file with some non-numeric data to demonstrate error handling.
 
 ## Running the Application
-1) Clone the repository or download the .py files and the dataset examples.
-2) Open a terminal or command prompt.
-3) Navigate to the directory containing the downloaded files.
-4) Run the application with:
+1. Clone the repository or download the .py files and the dataset examples.
+2. Open a terminal or command prompt.
+3. Navigate to the directory containing the downloaded files.
+4. Run the application with:
 
 ```bash
 python metricstics_app.py
 ```
-The GUI should open, where you can upload a dataset or generate a random dataset for analysis.4
+The GUI should open, where you can login and perform calulation.
 
 ## Usage
-1) Use the "Upload Dataset" button to load a dataset from a text file.
-2) Use the "Generate Random Dataset" button to create a dataset with 1000 random numbers between 0 and 1000.
-3) Calculate the mean, median, mode, min, and max using the corresponding buttons.
+1. Log in using the username admin and password password.
+2. To start a new session, use the "Start New Session" button.
+3. To load a previous session, select a session from the dropdown menu under "Load Previous Session" and click the "Load Session" button. This will display the dataset and statistics from the selected session.
+4. Use the "Upload Dataset" button to load a dataset from a text file for a new session.
+5. Use the "Generate Random Dataset" button to create a dataset with 1000 random numbers between 0 and 1000 for a new session.
+6. Calculate statistics by clicking "Calculate Statistics". If there are more than 10 median values, a "Show Median" button will appear to view all median values.
 
-##Error Handling
+## Error Handling
 The application includes error handling for:
-
-1) Incorrect file types or file content when uploading a dataset.
-2) Errors during statistical calculations if the dataset is inappropriate (e.g., non-numeric values, empty dataset).
-If errors occur, informative messages will be displayed to the user.
-
+1. Incorrect file types or file content when uploading a dataset.
+2. Errors during statistical calculations if the dataset is inappropriate (e.g., non-numeric values, empty dataset).
+3. Login errors.
+4. Session management issues.
