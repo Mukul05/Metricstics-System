@@ -50,12 +50,32 @@ python metricstics_app.py
 The GUI should open, where you can login and perform calulation.
 
 ## Usage
-1. Log in using the username admin and password password.
-2. To start a new session, use the "Start New Session" button.
-3. To load a previous session, select a session from the dropdown menu under "Load Previous Session" and click the "Load Session" button. This will display the dataset and statistics from the selected session.
-4. Use the "Upload Dataset" button to load a dataset from a text file for a new session.
-5. Use the "Generate Random Dataset" button to create a dataset with 1000 random numbers between 0 and 1000 for a new session.
-6. Calculate statistics by clicking "Calculate Statistics". If there are more than 10 median values, a "Show Median" button will appear to view all median values.
+1. Login: Start by logging in using the username admin and the password password.
+
+2. Starting a New Session:
+* Click the "Start New Session" button to initiate a new session for statistical analysis.
+  
+3. Loading a Previous Session:
+* To load a previous session, select it from the dropdown menu under "Load Previous Session" and click the "Load Session" button. This will display the dataset and statistics from the selected session.
+
+4. Uploading a Dataset:
+* Use the "Upload Dataset" button to load a dataset from a text file for a new session. This is suitable for performing analysis on custom data.
+
+5. Generating a Random Dataset:
+* Click the "Generate Random Dataset" button to create a dataset with 1000 random numbers between 0 and 1000. This feature is useful for quick testing or when specific data is not required.
+
+6. Calculating Statistics:
+* After uploading or generating a dataset, click "Calculate Statistics" to compute the mean, median, mode, minimum, and maximum values.
+* If there are more than 10 mode values, a "Show Mode" button will appear to display all mode values in a separate window.
+
+7. Saving Statistical Results:
+* Use the "Save As" button to save the calculated statistical results to a file. This feature allows you to keep a record of the results for future reference.
+
+8. Saving the Dataset:
+* The "Save Dataset" button enables you to save the currently loaded or generated dataset. This is particularly useful for preserving data used in a session for later use or analysis.
+
+9. Exiting the Application:
+* Click the "Quit" button to close the application safely.
 
 ## Error Handling
 The application includes error handling for:
