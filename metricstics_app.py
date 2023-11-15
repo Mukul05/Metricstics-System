@@ -77,7 +77,16 @@ class MetricsticsApp(tk.Tk):
 
         self.dataset_source_label = tk.Label(self, text='No dataset loaded')
         self.dataset_source_label.pack(pady=10)
-        self.show_mode_button = None
+
+        self.show_mode_button = tk.Button(self, text='Show Mode')
+
+        self.complete_results = ""
+
+        self.save_as_button = tk.Button(self, text="Save Result", command=self.save_results)
+        self.save_as_button.pack(pady=10)
+
+        self.save_dataset_button = tk.Button(self, text="Save Used Dataset", command=self.save_dataset)
+        self.save_dataset_button.pack(pady=10)
 
         self.quit_button = tk.Button(self, text="Quit", command=self.close_application)
         self.quit_button.pack(pady=10)
@@ -114,25 +123,25 @@ class MetricsticsApp(tk.Tk):
             self.dataset_source_label.config(text='Loaded previous session.')
 
     def display_statistics(self, statistics):
+        self.complete_results = ""  # Reset the complete results string
         result_text = ''
         for stat, value in statistics.items():
             if stat == 'mode':
                 mode_values = value if isinstance(value, list) else [value]
+                self.complete_results += f"Mode: {', '.join(map(str, mode_values))}\n"
 
                 if len(mode_values) > 10:
-                    result_text += 'Mode: [Click to view]\n'
-                    if self.show_mode_button is None:
-
-                        self.show_mode_button = tk.Button(self, text='Show Mode')
-                        self.show_mode_button.pack()
-
+                    # Configure the button with the current mode values and show it
                     self.show_mode_button.configure(command=lambda mv=mode_values: self.show_mode(mv))
+                    self.show_mode_button.pack(before=self.save_as_button)  # Position the button
+                    result_text += 'Mode: [Click to view]\n'
                 else:
-                    result_text += 'Mode: {}\n'.format(', '.join(map(str, mode_values)))
-                    if self.show_mode_button:
-                        self.show_mode_button.pack_forget()
+                    # Mode values fit in the label, so just display them and hide the button
+                    result_text += f"Mode: {', '.join(map(str, mode_values))}\n"
+                    self.show_mode_button.pack_forget()  # Hide the button
             else:
-                result_text += '{}: {}\n'.format(stat.capitalize(), value)
+                result_text += f"{stat.capitalize()}: {value}\n"
+                self.complete_results += f"{stat.capitalize()}: {value}\n"
 
         self.results_label.config(text=result_text)
 
@@ -212,6 +221,36 @@ class MetricsticsApp(tk.Tk):
     def close_application(self):
         self.destroy()
 
+    def save_results(self):
+        if not self.complete_results:
+            messagebox.showinfo("Info", "No results to save.")
+            return
+
+        file_path = filedialog.asksaveasfilename(defaultextension=".txt",
+                                                 filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+        if not file_path:
+            return  # User cancelled; exit the method
+
+        with open(file_path, 'w') as file:
+            file.write(self.complete_results)
+
+        messagebox.showinfo("Info", f"Results saved to {file_path}")
+
+    def save_dataset(self):
+        if self.stats is None or not self.stats.data:
+            messagebox.showinfo("Info", "No dataset to save.")
+            return
+
+        file_path = filedialog.asksaveasfilename(defaultextension=".txt",
+                                                 filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+        if not file_path:
+            return  # User cancelled; exit the method
+
+        with open(file_path, 'w') as file:
+            for data_point in self.stats.data:
+                file.write(f"{data_point}\n")
+
+        messagebox.showinfo("Info", f"Dataset saved to {file_path}")
 
 
 # Run the application
