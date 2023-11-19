@@ -8,23 +8,48 @@ from exceptions import DataFileError, CalculationError, LoginError, SessionError
 from login import Login
 from session_manager import SessionManager
 
+
+
+
+def changeOnHover(button: object, colorOnHover: object, colorOnLeave: object) -> object:
+    # adjusting background of the widget
+    # background on entering widget
+    button.bind("<Enter>", func=lambda e: button.config(
+        background=colorOnHover))
+
+    # background color on leaving widget
+    button.bind("<Leave>", func=lambda e: button.config(
+        background=colorOnLeave))
+
 # Login window
 class LoginWindow(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         self.title('Login')
-        self.geometry('250x150')
-
-        tk.Label(self, text='Username:').pack(pady=5)
-        self.username_entry = tk.Entry(self)
+        # width*height
+        self.geometry('250x200')
+        self.configure(background='lightgray')
+        tk.Label(self, text='Username:',background='lightgray').pack(pady=5)
+        self.username_entry = tk.Entry(self,highlightthickness=2,highlightbackground='black')
         self.username_entry.pack()
 
-        tk.Label(self, text='Password:').pack(pady=5)
-        self.password_entry = tk.Entry(self, show='*')
+        tk.Label(self, text='Password:',background='lightgray').pack(pady=5)
+        self.password_entry = tk.Entry(self, show='*',highlightthickness=2,highlightbackground='black')
         self.password_entry.pack()
-        self.protocol("WM_DELETE_WINDOW", self.on_close)
 
-        tk.Button(self, text='Login', command=self.attempt_login).pack(pady=15)
+        login_button = tk.Button(self, text='Login', command=self.attempt_login, fg='black', bg='light blue')
+        login_button.pack(pady=15)
+
+        # Apply hover effect to the login button
+        changeOnHover(login_button, 'green', 'yellow')
+
+    def attempt_login(self):
+        # Your login logic here
+        pass
+
+    def on_close(self):
+        self.destroy()
+        self.master.destroy()
 
     def attempt_login(self):
         username = self.username_entry.get()
@@ -33,6 +58,7 @@ class LoginWindow(tk.Toplevel):
             if Login.verify_login(username, password):
                 self.destroy()
                 self.master.deiconify()
+                self.master.configure(background='lightgray')
         except LoginError as e:
             messagebox.showerror("Login Failed", e)
 
@@ -48,11 +74,15 @@ class MetricsticsApp(tk.Tk):
         self.title('Metricstics Application')
         self.geometry('720x820')
 
+
+
+
         self.session_manager = SessionManager()
         self.stats = None
 
-        self.start_session_button = tk.Button(self, text='Start New Session', command=self.start_new_session)
+        self.start_session_button = tk.Button(self, text='Start New Session', command=self.start_new_session,fg='black',bg='light blue')
         self.start_session_button.pack(pady=10)
+        changeOnHover(self.start_session_button,'green','yellow')
 
         self.load_session_label = tk.Label(self, text='Load Previous Session:')
         self.load_session_label.pack(pady=5)
@@ -60,36 +90,47 @@ class MetricsticsApp(tk.Tk):
         self.sessions_var = tk.StringVar(self)
         self.update_session_dropdown()
 
-        self.load_session_button = tk.Button(self, text='Load Session', command=self.load_session)
+        # Apply hover effect to the login button
+
+        self.load_session_button = tk.Button(self, text='Load Session', command=self.load_session,fg='black', bg='light blue',)
         self.load_session_button.pack(pady=10)
+        changeOnHover(self.load_session_button, 'green', 'yellow')
 
-        self.upload_button = tk.Button(self, text='Upload Dataset', command=self.upload_dataset)
+        self.upload_button = tk.Button(self, text='Upload Dataset', command=self.upload_dataset,fg='black', bg='light blue')
         self.upload_button.pack(pady=10)
+        changeOnHover(self.upload_button, 'green', 'yellow')
 
-        self.random_button = tk.Button(self, text='Generate Random Dataset', command=self.generate_random_dataset)
+        self.random_button = tk.Button(self, text='Generate Random Dataset', command=self.generate_random_dataset,fg='black', bg='light blue')
         self.random_button.pack(pady=10)
+        changeOnHover(self.random_button, 'green', 'yellow')
 
-        self.calculate_button = tk.Button(self, text='Calculate Statistics', command=self.calculate_statistics)
+        self.calculate_button = tk.Button(self, text='Calculate Statistics', command=self.calculate_statistics,fg='black', bg='light blue')
         self.calculate_button.pack(pady=10)
+        changeOnHover(self.calculate_button, 'green', 'yellow')
 
-        self.results_label = tk.Label(self, text='Results will appear here', height=10)
+
+
+        self.results_label = tk.Label(self, text='Results will appear here', height=10,highlightthickness=2,highlightbackground='black')
         self.results_label.pack(pady=10)
 
         self.dataset_source_label = tk.Label(self, text='No dataset loaded')
         self.dataset_source_label.pack(pady=10)
 
-        self.show_mode_button = tk.Button(self, text='Show Mode')
+        self.show_mode_button = tk.Button(self, text='Show Mode',fg='black',bg='light blue')
+        changeOnHover(self.show_mode_button, 'green', 'yellow')
+
 
         self.complete_results = ""
 
-        self.save_as_button = tk.Button(self, text="Save Result", command=self.save_results)
+        self.save_as_button = tk.Button(self, text="Save Result", command=self.save_results,fg='black',bg='light blue')
         self.save_as_button.pack(pady=10)
-
-        self.save_dataset_button = tk.Button(self, text="Save Used Dataset", command=self.save_dataset)
+        changeOnHover(self.save_as_button, 'green', 'yellow')
+        self.save_dataset_button = tk.Button(self, text="Save Used Dataset", command=self.save_dataset,fg='black',bg='light blue')
         self.save_dataset_button.pack(pady=10)
-
-        self.quit_button = tk.Button(self, text="Quit", command=self.close_application)
+        changeOnHover(self.save_dataset_button, 'green', 'yellow')
+        self.quit_button = tk.Button(self, text="Quit", command=self.close_application,fg='black',bg='light blue')
         self.quit_button.pack(pady=10)
+        changeOnHover(self.quit_button, 'red', 'yellow')
         self.protocol("WM_DELETE_WINDOW", self.close_application)
     def update_session_dropdown(self):
         if hasattr(self, 'sessions_dropdown'):
@@ -124,6 +165,7 @@ class MetricsticsApp(tk.Tk):
 
     def display_statistics(self, statistics):
         self.complete_results = ""  # Reset the complete results string
+
         result_text = ''
         for stat, value in statistics.items():
             if stat == 'mode':
