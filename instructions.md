@@ -47,15 +47,16 @@ There are also two example dataset files:
 ```bash
 python metricstics_app.py
 ```
-The GUI should open, where you can login and perform calulation.
+The GUI should open, where you can log in and perform calculations.
 
 ## Usage
-1. Log in using the username admin and password password.
+1. Login using the username admin and password password.
 2. To start a new session, use the "Start New Session" button.
 3. To load a previous session, select a session from the dropdown menu under "Load Previous Session" and click the "Load Session" button. This will display the dataset and statistics from the selected session.
 4. Use the "Upload Dataset" button to load a dataset from a text file for a new session.
 5. Use the "Generate Random Dataset" button to create a dataset with 1000 random numbers between 0 and 1000 for a new session.
 6. Calculate statistics by clicking "Calculate Statistics". If there are more than 10 median values, a "Show Median" button will appear to view all median values.
+7. Save the dataset and result to the desired location
 
 ## Error Handling
 The application includes error handling for:
