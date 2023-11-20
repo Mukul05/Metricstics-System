@@ -23,13 +23,13 @@ pip install tk
 ```
 
 ## Application Structure
-The application consists of three main files:
+The application consists of 5 main files:
 
 1) metricstics.py: Contains the Metricstics class with methods for statistical calculations.
 2) exceptions.py: Contains custom exception classes for the application.
 3) metricstics_app.py: Manages the Tkinter GUI and user interactions.
 4) login.py: Handles the user authentication process.
-5)session_manager.py: Manages user sessions, including saving and loading sessions.
+5) session_manager.py: Manages user sessions, including saving and loading sessions.
 
 ## The application also includes a login functionality with predefined credentials 
 ## (username: admin, password: password)
@@ -37,7 +37,8 @@ The application consists of three main files:
 There are also two example dataset files:
 1) valid_dataset.txt: A text file with valid numeric data.
 2) invalid_dataset.txt: A text file with some non-numeric data to demonstrate error handling.
-
+3) valid_dataset_more than 10 modes: a text file with more than 10 modes
+   
 ## Running the Application
 1. Clone the repository or download the .py files and the dataset examples.
 2. Open a terminal or command prompt.
