@@ -15,6 +15,10 @@ Morteza Khanjanzadeh
 
 ## Documentation: https://drive.google.com/drive/folders/1CAjg0MjuHDWufMj14jO8RrSoRH3DLvwD?usp=sharing
 
+## Test case Document: https://github.com/Mukul05/SOEN-6611-Metricstics-System/blob/main/Test%20Case%20Document.pdf
+
+## Instructions: https://github.com/Mukul05/SOEN-6611-Metricstics-System/blob/main/instructions.md
+
 # Roles & Responsibilities: https://docs.google.com/spreadsheets/d/17QxPFAo9zdQe9069OR1jyDaA9jmrkQUA/edit#gid=124426942
 
 ## Deliverable 1:- 
