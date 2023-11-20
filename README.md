@@ -52,6 +52,7 @@ Morteza Khanjanzadeh
             <td>Task 2: Focus on calculating the object-oriented metrics (WMC, CF, LCOM*) for METRICSTICS</td>
             <td>Task 3: Making Latex report</td>
            <td>Task 4:  Contribute to the programming of METRICSTICS, with a focus on modular and reusable code.</td>
+	<td>Task 5:  Github maintenance.</td>
         </tr>
          <tr>
             <td>Mahimur Rahman Khan</td>
@@ -59,6 +60,7 @@ Morteza Khanjanzadeh
             <td>Task 2: Preparing Instructions</td>
             <td>Task 3: Assist in the development of METRICSTICS, particularly in areas related to the implementation of these metrics.</td>
             <td>Task 4: Assist in correlation analysis and ensure the robustness of the statistical approach </td>
+		 <td>Task 5: Testing Application </td>
         </tr>
          <tr>
             <td>Morteza Khanjanzadeh</td>
@@ -66,6 +68,7 @@ Morteza Khanjanzadeh
             <td>Task 2: Working on GUI of METRICSTICS application</td>
             <td>Task 3:Focus on calculating the object-oriented metrics (WMC, CF, LCOM*) for METRICSTICS</td>
             <td>Task 4: Preparing Instructions</td>
+		  <td>Task 5: Testing Application </td>
         </tr>
       </tbody>
    </table>
