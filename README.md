@@ -1,4 +1,4 @@
-# SOEN-6611-Metricstics-System
+# Metricstics-System- Calculator
 The Metricstics Application is a user-friendly tool designed for statistical analysis, featuring capabilities for uploading datasets, generating random data, and computing basic statistics like mean, median, mode, min, and max. It offers a  robust session management, allowing users to save and revisit their analytical sessions. Developed with Python and Tkinter, this application is ideal for both educational purposes and preliminary data analysis, combining ease of use with functional versatility
 
 Note :- Please read the instructions for steps to run the code.
