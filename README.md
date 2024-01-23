@@ -1,7 +1,7 @@
 # Metricstics-System- Calculator
-The Metricstics Application is a user-friendly tool designed for statistical analysis, featuring capabilities for uploading datasets, generating random data, and computing basic statistics like mean, median, mode, min, and max. It offers a  robust session management, allowing users to save and revisit their analytical sessions. Developed with Python and Tkinter, this application is ideal for both educational purposes and preliminary data analysis, combining ease of use with functional versatility
+The Metricstics Application is a user-friendly tool designed for statistical analysis, featuring capabilities for uploading datasets, generating random data, and computing basic statistics like mean, median, mode, min, and max. It offers robust session management, allowing users to save and revisit their analytical sessions. Developed with Python and Tkinter, this application is ideal for both educational purposes and preliminary data analysis, combining ease of use with functional versatility
 
-Note :- Please read the instructions for steps to run the code.
+Note:- Please read the instructions for steps to run the code.
 ## Contributors:
 
 Mukul Kumar	
@@ -33,7 +33,7 @@ Morteza Khanjanzadeh
          </tr>
          <tr>
             <td>Mukul Kumar</td>
-            <td>Task 1 : Contribute to the development of the GUI for METRICSTICS</td>
+            <td>Task 1: Contribute to the development of the GUI for METRICSTICS</td>
             <td>Task  2:  Assist in the development of METRICSTICS, particularly in areas related to the implementation of these metrics</td>
             <td>Task 3: Oversee the overall programming of METRICSTICS, ensuring adherence to requirements such as no use of built-in functions or libraries</td>
             <td>Task 4: Setting up and maintaining the development environments (Github)</td>
@@ -41,7 +41,7 @@ Morteza Khanjanzadeh
          </tr>
          <tr>
             <td>Anuj Kharit</td>
-            <td>Task 1 : Lead the effort estimation using UCP and COCOMO 81, ensuring accurate calculations and effective comparison</td>
+            <td>Task 1: Lead the effort estimation using UCP and COCOMO 81, ensuring accurate calculations and effective comparison</td>
             <td>Task 2:  Assist in the development of METRICSTICS</td>
             <td>Task 3: Assist in preparing documentation for the effort estimation and programming implementation.</td>
            <td>Task 4: Test case Document </td>
@@ -49,17 +49,17 @@ Morteza Khanjanzadeh
          </tr>
          <tr>
             <td>Alekhya Kesapragada</td>
-            <td>Task 1 : Take the lead in calculating and documenting the cyclomatic number of METRICSTICS.</td>
+            <td>Task 1: Take the lead in calculating and documenting the cyclomatic number of METRICSTICS.</td>
             <td>Task 2: Focus on calculating the object-oriented metrics (WMC, CF, LCOM*) for METRICSTICS</td>
             <td>Task 3: Making Latex report</td>
-           <td>Task 4:  Contribute to the programming of METRICSTICS, with a focus on modular and reusable code.</td>
-	<td>Task 5:  Github maintenance.</td>
+           <td>Task 4:  Contribute to the programming of METRICSTICS, focusing on modular and reusable code.</td>
+	<td>Task 5:  GitHub maintenance.</td>
         </tr>
          <tr>
             <td>Mahimur Rahman Khan</td>
             <td>Task 1: Participate in the correlation analysis using Scatter Plot and correlation coefficients.</td>
             <td>Task 2: Preparing Instructions</td>
-            <td>Task 3: Assist in the development of METRICSTICS, particularly in areas related to the implementation of these metrics.</td>
+            <td>Task 3: Assist in the development of METRICSTICS, particularly in implementing these metrics.</td>
             <td>Task 4: Assist in correlation analysis and ensure the robustness of the statistical approach </td>
 	 <td>Task 5: Testing Application </td>
         </tr>
